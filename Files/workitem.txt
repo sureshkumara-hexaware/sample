@@ -1,0 +1,94 @@
+Create Object Dictionary entry
+
+Description:-
+-------------
+API Code to retrieve Python api and create Object Dictionary Entries. 
+Create Common controller and Implementation classes.  
+repo classes changes for Object Dictionary if any. 
+Add an Icon at top near by ID2E to initiate this assistant.
+
+need to add Python api in dev.properties. 
+DTO already exist.No data model and repo changes needed. 
+Create single dto which has ComponentDTO, Testcase DTO, Obejct dictionary DTO inside these to map the response 
+-----------------------------------------------------
+
+feature/MigAss_CodeScanning
+
+feature/MigAssObjDictionary
+============================================================
+Get: - read object dic page
+----
+http://localhost:8282/talos/ObjectDictionaryPage/get/pages/1
+
+
+Post: - create obj dic page
+-----
+http://localhost:8282/talos/ObjectDictionaryPage/create/1
+
++) Request payload:
+---------------------
+{"name":"sampleObjDic","projectId":1,"dictionaryPageType":1}
+
++) Response Payload:
+--------------------
+{"id":54,"name":"sampleObjDic","projectId":0,"dictionaryPageType":1,"ex1_Description":null,"ex2_Count":0}
+
+
+Delete: - delete obj dic page
+-------
+http://localhost:8282/talos/ObjectDictionaryPage/deletePage/1/54
+
++) Request payload:[no request]
+---------------------
+
++) Response Payload: [no response]
+--------------------
+
+
+Put: - update obj dic page name
+-----
+http://localhost:8282/talos/ObjectDictionaryPage/update
+
++) Request payload:
+---------------------
+{"id":40,"name":"updated page nagme","projectId":1,"dictionaryPageType":1,"ex1_Description":null,"ex2_Count":0}
+
++) Response Payload: [no response]
+--------------------
+
+=======================================================================================================
+
+Post: - create entry
+-----
+http://localhost:8282/talos/ObjectDictionary/create/1
+
++) Request payload:
+---------------------
+{"locatorType":{"id":3,"name":"Id"},"name":"super secre username","locator":"secretUID","pageId":54,"projectId":1}
+
++) Response Payload:
+--------------------
+{"id":1352,"projectId":0,"name":"super secre username","locatorType":null,"locator":"secretUID","pageId":null,"objectPageName":null,"outerHTML":null}
+
+
+Put: - update entry
+-----
+http://localhost:8282/talos/ObjectDictionary/update
+
++) Request payload:
+---------------------
+{"id":1351,"projectId":1,"name":"UserName Ref","locatorType":{"id":3,"name":"Id"},"locator":"secretUsername","pageId":54,"objectPageName":null,"outerHTML":null}
+
++) Response Payload: [no response]
+--------------------
+
+
+Delete: - delete entry
+-------
+http://localhost:8282/talos/ObjectDictionary/delete/1351
+
++) Request payload: [no request]
+---------------------
+
++) Response Payload: [no response]
+--------------------
