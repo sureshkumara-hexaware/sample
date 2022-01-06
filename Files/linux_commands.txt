@@ -1,0 +1,10 @@
+1) Display each sub-directory size in a list
+ du -hs * | sort -hr
+
+2) Display a folder size
+ du -sh <folder_name>
+
+3) To check entire disk free space
+ df -h
+
+
